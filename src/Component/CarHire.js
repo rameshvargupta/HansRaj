@@ -5,20 +5,23 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 
 const CarHire = () => {
-const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     Aos.init({ duration: 2000 })
-}, [])
+  }, [])
 
-function FormSubmit() {
-  let From = document.getElementById('destination').value;
-  let To = document.getElementById('date1').value;
-  if (From !== "" && To !== "") {
-    alert("Welcome To My Website");
-    navigate("/");
+  function FormSubmit() {
+    let From = document.getElementById('destination').value;
+    let To = document.getElementById('date1').value;
+    if (From !== "" && To !== "") {
+      alert("Welcome To My Website");
+      navigate("/");
+    }
+    else {
+      alert("Please Fill The Proper Details");
+    }
   }
-}
 
 
   function hadelshownav(e) {
@@ -37,7 +40,7 @@ function FormSubmit() {
 
   return (
     <div onClick={HideOpennav}>
-      
+
       <div className="Navbar">
         <div className="container NavStart">
 
@@ -47,7 +50,7 @@ function FormSubmit() {
           </div>
           </Link>
 
-          <div className="login2"  data-aos="fade-down">
+          <div className="login2" data-aos="fade-down">
             <li><Link to={"/Flight"}><i className='fa-solid fa-plane'></i> Flights</Link></li>
             <li><Link to={"/Hotel"}><i className='fa-solid fa-hotel'></i> Hotels</Link></li>
             <li><Link className='active' to={"/CarHire"}><i className='fa-solid fa-car'></i> Car Hire</Link></li>
@@ -82,68 +85,66 @@ function FormSubmit() {
         <div className="container cont8">
 
           <div className="hotelbox1" data-aos="zoom-in-up">
-            <form action="">
-            <h1>Find the best car rental deals</h1>
-            <div className="inputForm">
+              <h1>Find the best car rental deals</h1>
+              <div className="inputForm">
 
-              <div className="InnerInputForm1">
-                <label htmlFor="destination">Pick-up-location</label><br />
-                <input type="text" id='destination' required placeholder='Enter City, airport or station' />
-              </div>
-
-
-              <div className="InnerInputForm2">
-
-                <div className="formbox">
-                  <label htmlFor="date1">Pick-up Date</label><br />
-                  <input type="date" id='date1' required />
-                </div>
-
-                <div className="formbox">
-                  <label htmlFor="date2">Time</label><br />
-                  <input type="time" id='date2' />
-                </div>
-
-                <div className="formbox">
-                  <label htmlFor="addperson">drop-off-Date</label><br />
-                  <input type="date" id='date1' required />
-                </div>
-                <div className="formbox">
-                  <label htmlFor="date2">Time</label><br />
-                  <input type="time" id='date2' />
+                <div className="InnerInputForm1">
+                  <label htmlFor="destination">Pick-up-location</label><br />
+                  <input type="text" id='destination' required placeholder='Enter City, airport or station' />
                 </div>
 
 
-              </div>
-            </div>
+                <div className="InnerInputForm2">
+
+                  <div className="formbox">
+                    <label htmlFor="date1">Pick-up Date</label><br />
+                    <input type="date" id='date1' required />
+                  </div>
+
+                  <div className="formbox">
+                    <label htmlFor="date2">Time</label><br />
+                    <input type="time" id='date2' />
+                  </div>
+
+                  <div className="formbox">
+                    <label htmlFor="addperson">drop-off-Date</label><br />
+                    <input type="date" id='date1' required />
+                  </div>
+                  <div className="formbox">
+                    <label htmlFor="date2">Time</label><br />
+                    <input type="time" id='date2' />
+                  </div>
 
 
-            <div className="filterTicket Carfilter">
-
-              <div className="innerFilter">
-
-                <div className="innerDiv">
-                  <input type="checkbox" id='free' />
-                  <label htmlFor="free">Return car to a location</label>
-                </div>
-
-                <div className="innerDiv">
-                  <input type="checkbox" id='free2' />
-                  <label htmlFor="free2">Driver aged between 25-75</label>
                 </div>
               </div>
 
-              <div className="innerFilter">
-                <button onClick={FormSubmit} className='btn btn-primary'>Search Cars <i class="fa-solid fa-arrow-right"></i></button>
+
+              <div className="filterTicket Carfilter">
+
+                <div className="innerFilter">
+
+                  <div className="innerDiv">
+                    <input type="checkbox" id='free' />
+                    <label htmlFor="free">Return car to a location</label>
+                  </div>
+
+                  <div className="innerDiv">
+                    <input type="checkbox" id='free2' />
+                    <label htmlFor="free2">Driver aged between 25-75</label>
+                  </div>
+                </div>
+
+                <div className="innerFilter">
+                  <button onClick={FormSubmit} className='btn btn-primary'>Search Cars <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
               </div>
 
-            </div>
-
-            </form>
           </div>
-          
+
         </div>    {/* close container */}
-    
+
 
         <div className="container mt-3">
           <div className="row">
@@ -483,7 +484,7 @@ function FormSubmit() {
       </div>
 
       <div data-aos="fade-up">
-      <Footer />
+        <Footer />
       </div>
     </div>
   )

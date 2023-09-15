@@ -21,6 +21,9 @@ const Hotel = () => {
       alert("Welcome To My Website");
       navigate("/CarHire");
     }
+    else {
+      alert("Please Fill The Proper Details");
+    }
   }
 
   function addPerson(e) {
@@ -95,7 +98,6 @@ const Hotel = () => {
 
           <div className="hotelbox1" data-aos="zoom-in-up">
             
-            <form action="">
 
               <h1>Find the right hotel today</h1>
               <div className="inputForm">
@@ -195,7 +197,6 @@ const Hotel = () => {
 
               </div>
 
-            </form>
 
           </div>
 

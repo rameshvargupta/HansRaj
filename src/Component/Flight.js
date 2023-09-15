@@ -23,6 +23,9 @@ const Flight = () => {
            alert("Welcome To My Website");
             navigate("/Hotel");
         }
+        else{
+            alert("Please Fill The Proper Details");
+          }
     }
 
     const handleRadioChange = (e) => {
@@ -126,7 +129,6 @@ const Flight = () => {
                         <div className="FlightInput">
                             <div className="search3" data-aos="zoom-in-up">
 
-                                <form action="">
 
                                     <div className="flightbox">
                                         <div className="RedioButton">
@@ -302,7 +304,6 @@ const Flight = () => {
                                         </div>
                                     </div>
 
-                                </form>
                             </div>
                         </div>
 

@@ -20,6 +20,9 @@ const Navbar = () => {
       alert("Welcome To My Website");
       navigate("/Flight");
     }
+    else{
+      alert("Please Fill The Proper Details");
+    }
   }
 
   function showdata(e) {
@@ -214,7 +217,6 @@ const Navbar = () => {
         <div className="container cont-1">
 
           <h1 data-aos="fade-up" className='mt-4 mb-4'>Millions of cheap flights. One simple search.</h1>
-          <form action="">
             <div className="search">
               <div className="mainInput" data-aos="fade-right">
 
@@ -282,8 +284,6 @@ const Navbar = () => {
               </div>
 
             </div>
-
-          </form>
 
           <div className="SelectInp mt-2 pb-5">
             <div className="input2">
