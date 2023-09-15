@@ -48,6 +48,7 @@ const Flight = () => {
     function hadelshownav(e) {
         e.stopPropagation();
         document.getElementById("showSmallNav").style.display = "block"
+        document.getElementById("pasengersDetails1").style.display = "None";
     }
 
     function hideSmallNav() {
@@ -56,9 +57,9 @@ const Flight = () => {
     function HideOpennav(e) {
         e.stopPropagation();
         document.getElementById("showSmallNav").style.display = "none"
-        document.getElementById("pasengersDetails1").style.display = "None";
-
     }
+        
+
     function validateform() {
         let email = document.getElementById("emailInput").value;
         // if (!email==='') {
@@ -295,7 +296,7 @@ const Flight = () => {
 
             </div>
 
-            <div className="container mt-3">
+            <div className="container mt-3 flightPageM">
                 <div className="row">
                     <div className=" col-sm-12 col-md-4 col-lg-4" data-aos="zoom-in-up">
                         <div className="box12">

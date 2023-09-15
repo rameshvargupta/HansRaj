@@ -26,15 +26,17 @@ const Hotel = () => {
   function hadelshownav(e) {
     e.stopPropagation()
     document.getElementById("showSmallNav").style.display = "block"
+    document.getElementById("ShowDetails2").style.display = "None";
   }
 
   function hideSmallNav() {
     document.getElementById("showSmallNav").style.display = "none"
   }
+
   function HideOpennav(e) {
     e.stopPropagation()
     document.getElementById("showSmallNav").style.display = "none"
-    document.getElementById("ShowDetails2").style.display = "None";
+    // document.getElementById("ShowDetails2").style.display = "None";
   }
 
   return (
@@ -137,7 +139,7 @@ const Hotel = () => {
                       <i class="fa-solid fa-person"></i>Children
                     </div>
                     <div className="innerDetail2">
-                      <button onClick={() => count1 !== 0 ? setCount1(count1 - 1) : ""}  >-</button> <span>{count1}</span> <button onClick={() => count <= 3 ? setCount1(count1 + 1) : ""} >+</button>
+                      <button onClick={() => count1 !== 0 ? setCount1(count1 - 1) : ""}  >-</button> <span>{count1}</span> <button onClick={() => count1 <= 3 ? setCount1(count1 + 1) : ""} >+</button>
                     </div>
                   </div>
 
@@ -147,7 +149,7 @@ const Hotel = () => {
                       <i class="fa-solid fa-person-booth"></i> Rooms
                     </div>
                     <div className="innerDetail2">
-                      <button onClick={() => count2 !== 0 ? setCount2(count2 - 1) : ""}  >-</button> <span>{count2}</span> <button onClick={() => count <= 4 ? setCount2(count2 + 1) : ""} >+</button>
+                      <button onClick={() => count2 !== 0 ? setCount2(count2 - 1) : ""}  >-</button> <span>{count2}</span> <button onClick={() => count2 <= 4 ? setCount2(count2 + 1) : ""} >+</button>
                     </div>
                   </div>
                   <div className="divBtn2" style={{ textAlign: "center " }}> <button className='btn btn-primary' onClick={hidePasengers}>Done</button></div>
@@ -617,7 +619,7 @@ const Hotel = () => {
           <p>View our hand-picked hotel destinations</p>
           <div className="row mt-5">
 
-            <div className="col-sm-6 col-md-4 col-lg-4"  data-aos="fade-up">
+            <div className="col-sm-6 col-md-4 col-lg-4" data-aos="fade-up">
               <figure>
                 <div className="image3">
                   <img className='img-fluid' src="Images/bang.jpg" alt="" /></div>
@@ -712,9 +714,9 @@ const Hotel = () => {
         </div>
       </div>
 
-      
+
       <div data-aos="fade-up" >
-      <Footer />
+        <Footer />
       </div>
 
     </div >

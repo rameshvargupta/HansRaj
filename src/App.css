@@ -290,6 +290,10 @@ select {
 #pasengerdata{
     position: relative;
 }
+.flightPageM{
+    position: relative;
+    z-index: -1;
+}
 .pasengersDetails{
     background-color: white;
     color:black;
@@ -334,7 +338,10 @@ select {
 /* ///////////////////////////////////////////// */
 
 /* Center Component is start */
-
+.CenterPage{
+    position: relative;
+    z-index: -1;
+}
 
 .box1 {
     color: white;

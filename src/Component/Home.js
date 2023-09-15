@@ -73,8 +73,6 @@ const Navbar = () => {
     document.getElementById("ShowLoginPage").style.display = "none";
     document.getElementById("ShowNav").style.display = "none";
     document.getElementById("ShowUrl").style.display = "none";
-    document.getElementById("pasengersDetails1").style.display = "none";
-
   }
 
   return (
@@ -256,6 +254,7 @@ const Navbar = () => {
                       <strong>Childern</strong>
                       <p>Aged 0 to 15</p>
                     </div>
+
                     <div className="pasangers1">
                       <button onClick={() => count1 !== 0 ? setcount1(count1 - 1) : ""}>-</button> <strong>{count1}</strong> <button onClick={() => count1 < 4 ? setcount1(count1 + 1) : ""}>+</button>
                     </div>
@@ -271,7 +270,7 @@ const Navbar = () => {
 
 
 
-            <div className="input2"  data-aos="fade-up">
+            <div className="input2">
               <button className='btn btn-primary'>Search</button>
             </div>
 

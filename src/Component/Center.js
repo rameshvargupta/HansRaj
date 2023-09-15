@@ -10,7 +10,7 @@ const Center = () => {
     }, [])
 
     return (
-        <div>
+        <div className='CenterPage'>
             <div className="container mt-5 mb-1">
                 <div className="row box">
 
