@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from './Footer'
 import Aos from 'aos';
 import "aos/dist/aos.css";
@@ -9,10 +9,19 @@ const Hotel = () => {
   const [count, setCount] = useState(1);
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(1);
-
+  const navigate = useNavigate();
   useEffect(() => {
     Aos.init({ duration: 2000 })
   }, [])
+
+  function FormSubmit() {
+    let From = document.getElementById('destination').value;
+    let To = document.getElementById('date2').value;
+    if (From !== "" && To !== "") {
+      alert("Welcome To My Website");
+      navigate("/CarHire");
+    }
+  }
 
   function addPerson(e) {
     e.stopPropagation()
@@ -85,103 +94,108 @@ const Hotel = () => {
         <div className="container cont8">
 
           <div className="hotelbox1" data-aos="zoom-in-up">
-            <h1>Find the right hotel today</h1>
-            <div className="inputForm">
+            
+            <form action="">
 
-              <div className="InnerInputForm1">
-                <label htmlFor="destination">Where do you want to stay?</label><br />
-                <input type="text" id='destination' placeholder='Enter Destination or Hotel Name' />
-              </div>
+              <h1>Find the right hotel today</h1>
+              <div className="inputForm">
 
-              <div className="InnerInputForm">
-                <div className="InnerInputForm2">
-
-                  <div className="formbox">
-                    <label htmlFor="date1">Check-in</label><br />
-                    <input type="date" id='date1' />
-                  </div>
-                  <div className="formbox">
-                    <label htmlFor="date2">Check-out</label><br />
-                    <input type="date" id='date2' />
-                  </div>
-
-                  <div className="formbox pasengerBox" onClick={addPerson}>
-                    <label htmlFor="addperson">Guest and Rooms</label><br />
-                    <div id="addperson">
-                      {`${count} Adult, ${count1} Child, ${count2} Rooms `} <i id='caret' class="fa fa-caret-down"></i>
-                    </div>
-
-                  </div>
+                <div className="InnerInputForm1">
+                  <label htmlFor="destination">Where do you want to stay?</label><br />
+                  <input type="text" id='destination' required placeholder='Enter Destination or Hotel Name' />
                 </div>
 
-                <div className="pasengerDetails2" id='ShowDetails2'>
+                <div className="InnerInputForm">
+                  <div className="InnerInputForm2">
 
-                  <div className="pasengerBtn">
-                    <div className="pasengers">
-                      <h5>Add Pasengers Details</h5>
+                    <div className="formbox">
+                      <label htmlFor="date1">Check-in</label><br />
+                      <input type="date" id='date1' required />
                     </div>
-                    <div className="divBtn"> <button className='btn btn-danger' onClick={hidePasengers}>X</button></div>
-                  </div>
-
-                  <div className='innerPasengers1'>
-
-                    <div className="innerDetail1">
-                      <i class="fa-solid fa-person"></i>  Adult
+                    <div className="formbox">
+                      <label htmlFor="date2">Check-out</label><br />
+                      <input type="date" id='date2' required />
                     </div>
-                    <div className="innerDetail2">
-                      <button onClick={() => count !== 0 ? setCount(count - 1) : ''}   >-</button> <span>{count}</span> <button onClick={() => count <= 6 ? setCount(count + 1) : ""}>+</button>
-                    </div>
-                  </div>
 
-                  <div className='innerPasengers1'>
+                    <div className="formbox pasengerBox" onClick={addPerson}>
+                      <label htmlFor="addperson">Guest and Rooms</label><br />
+                      <div id="addperson">
+                        {`${count} Adult, ${count1} Child, ${count2} Rooms `} <i id='caret' class="fa fa-caret-down"></i>
+                      </div>
 
-                    <div className="innerDetail1">
-                      <i class="fa-solid fa-person"></i>Children
-                    </div>
-                    <div className="innerDetail2">
-                      <button onClick={() => count1 !== 0 ? setCount1(count1 - 1) : ""}  >-</button> <span>{count1}</span> <button onClick={() => count1 <= 3 ? setCount1(count1 + 1) : ""} >+</button>
                     </div>
                   </div>
 
-                  <div className='innerPasengers1'>
+                  <div className="pasengerDetails2" id='ShowDetails2'>
 
-                    <div className="innerDetail1">
-                      <i class="fa-solid fa-person-booth"></i> Rooms
+                    <div className="pasengerBtn">
+                      <div className="pasengers">
+                        <h5>Add Pasengers Details</h5>
+                      </div>
+                      <div className="divBtn"> <button className='btn btn-danger' onClick={hidePasengers}>X</button></div>
                     </div>
-                    <div className="innerDetail2">
-                      <button onClick={() => count2 !== 0 ? setCount2(count2 - 1) : ""}  >-</button> <span>{count2}</span> <button onClick={() => count2 <= 4 ? setCount2(count2 + 1) : ""} >+</button>
+
+                    <div className='innerPasengers1'>
+
+                      <div className="innerDetail1">
+                        <i class="fa-solid fa-person"></i>  Adult
+                      </div>
+                      <div className="innerDetail2">
+                        <button onClick={() => count !== 0 ? setCount(count - 1) : ''}   >-</button> <span>{count}</span> <button onClick={() => count <= 6 ? setCount(count + 1) : ""}>+</button>
+                      </div>
                     </div>
+
+                    <div className='innerPasengers1'>
+
+                      <div className="innerDetail1">
+                        <i class="fa-solid fa-person"></i>Children
+                      </div>
+                      <div className="innerDetail2">
+                        <button onClick={() => count1 !== 0 ? setCount1(count1 - 1) : ""}  >-</button> <span>{count1}</span> <button onClick={() => count1 <= 3 ? setCount1(count1 + 1) : ""} >+</button>
+                      </div>
+                    </div>
+
+                    <div className='innerPasengers1'>
+
+                      <div className="innerDetail1">
+                        <i class="fa-solid fa-person-booth"></i> Rooms
+                      </div>
+                      <div className="innerDetail2">
+                        <button onClick={() => count2 !== 0 ? setCount2(count2 - 1) : ""}  >-</button> <span>{count2}</span> <button onClick={() => count2 <= 4 ? setCount2(count2 + 1) : ""} >+</button>
+                      </div>
+                    </div>
+                    <div className="divBtn2" style={{ textAlign: "center " }}> <button className='btn btn-primary' onClick={hidePasengers}>Done</button></div>
+
+
+
                   </div>
-                  <div className="divBtn2" style={{ textAlign: "center " }}> <button className='btn btn-primary' onClick={hidePasengers}>Done</button></div>
+
+                </div>
 
 
+              </div>
+              <div className="filterTicket">
 
+                <div className="innerFilter">
+
+                  <span>Popular Filter:</span>
+                  <span><input type="checkbox" id='free' />
+                    <label htmlFor="free">Free cancellation</label>
+                  </span>
+                  <span> <input type="checkbox" id='star4' />
+                    <label htmlFor="star4">4 Start</label></span>
+
+                  <span> <input type="checkbox" id='star3' />
+                    <label htmlFor="star3">3 Start</label></span>
+                </div>
+
+                <div className="innerFilter">
+                  <button onClick={FormSubmit} className='btn btn-primary'>Search Hotels <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
 
               </div>
 
-
-            </div>
-            <div className="filterTicket">
-
-              <div className="innerFilter">
-
-                <span>Popular Filter:</span>
-                <span><input type="checkbox" id='free' />
-                  <label htmlFor="free">Free cancellation</label>
-                </span>
-                <span> <input type="checkbox" id='star4' />
-                  <label htmlFor="star4">4 Start</label></span>
-
-                <span> <input type="checkbox" id='star3' />
-                  <label htmlFor="star3">3 Start</label></span>
-              </div>
-
-              <div className="innerFilter">
-                <button className='btn btn-primary'>Search Hotels <i class="fa-solid fa-arrow-right"></i></button>
-              </div>
-
-            </div>
+            </form>
 
           </div>
 

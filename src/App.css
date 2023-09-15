@@ -11,6 +11,8 @@
 .Navbar {
     background-color: #05203c;
     color: white;
+    position: relative;
+    z-index: 2;
 
 }
 
@@ -340,7 +342,7 @@ select {
 /* Center Component is start */
 .CenterPage{
     position: relative;
-    z-index: -1;
+    z-index: 1;
 }
 
 .box1 {

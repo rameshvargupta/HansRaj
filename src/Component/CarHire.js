@@ -1,14 +1,25 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 
 const CarHire = () => {
+const navigate=useNavigate();
 
   useEffect(() => {
     Aos.init({ duration: 2000 })
 }, [])
+
+function FormSubmit() {
+  let From = document.getElementById('destination').value;
+  let To = document.getElementById('date1').value;
+  if (From !== "" && To !== "") {
+    alert("Welcome To My Website");
+    navigate("/");
+  }
+}
+
 
   function hadelshownav(e) {
     e.stopPropagation();
@@ -71,12 +82,13 @@ const CarHire = () => {
         <div className="container cont8">
 
           <div className="hotelbox1" data-aos="zoom-in-up">
+            <form action="">
             <h1>Find the best car rental deals</h1>
             <div className="inputForm">
 
               <div className="InnerInputForm1">
                 <label htmlFor="destination">Pick-up-location</label><br />
-                <input type="text" id='destination' placeholder='Enter City, airport or station' />
+                <input type="text" id='destination' required placeholder='Enter City, airport or station' />
               </div>
 
 
@@ -84,7 +96,7 @@ const CarHire = () => {
 
                 <div className="formbox">
                   <label htmlFor="date1">Pick-up Date</label><br />
-                  <input type="date" id='date1' />
+                  <input type="date" id='date1' required />
                 </div>
 
                 <div className="formbox">
@@ -94,7 +106,7 @@ const CarHire = () => {
 
                 <div className="formbox">
                   <label htmlFor="addperson">drop-off-Date</label><br />
-                  <input type="date" id='date1' />
+                  <input type="date" id='date1' required />
                 </div>
                 <div className="formbox">
                   <label htmlFor="date2">Time</label><br />
@@ -122,12 +134,12 @@ const CarHire = () => {
               </div>
 
               <div className="innerFilter">
-                <button className='btn btn-primary'>Search Cars <i class="fa-solid fa-arrow-right"></i></button>
+                <button onClick={FormSubmit} className='btn btn-primary'>Search Cars <i class="fa-solid fa-arrow-right"></i></button>
               </div>
 
             </div>
 
-
+            </form>
           </div>
           
         </div>    {/* close container */}

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Center from './Center';
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
@@ -8,9 +8,19 @@ const Navbar = () => {
 
   const [count, setcount] = useState(0);
   const [count1, setcount1] = useState(0);
+  const navigate = useNavigate()
   useEffect(() => {
     Aos.init({ duration: 2000 })
   }, [])
+
+  function FormSubmit() {
+    let From = document.getElementById('from').value;
+    let To = document.getElementById('to').value;
+    if (From !== "" && To !== "") {
+      alert("Welcome To My Website");
+      navigate("/Flight");
+    }
+  }
 
   function showdata(e) {
     e.stopPropagation()
@@ -204,77 +214,77 @@ const Navbar = () => {
         <div className="container cont-1">
 
           <h1 data-aos="fade-up" className='mt-4 mb-4'>Millions of cheap flights. One simple search.</h1>
+          <form action="">
+            <div className="search">
+              <div className="mainInput" data-aos="fade-right">
 
-          <div className="search">
-            <div className="mainInput" data-aos="fade-right">
-
-              <div className="input1">
-                <label for="from" >From </label><br />
-                <input type="text" id="from" placeholder="Country,city or airtport" />
-              </div>
-              <div className="input1">
-                <label for="to" >To </label><br />
-                <input type="text" id="to" placeholder="Country,city or airtport" />
-              </div>
-            </div>
-
-
-            <div className="mainInput" data-aos="fade-left">
-              <div className="input1 details2">
-                <label for="depart" >Departure </label><br />
-                <input type="date" id="depart" />
-              </div>
-
-
-              <div id='pasengerdata'>
-                <div className="input1 updatedata1" onClick={hadelFillData}>
-                  <label for="pasenger" >Travellers and cabin class </label><br />
-                  <div>{count} Adult, {count1} Children <i class="fa-solid fa-caret-down"></i></div>
+                <div className="input1">
+                  <label for="from" >From </label><br />
+                  <input type="text" required id="from" placeholder="Country,city or airtport" />
                 </div>
-
-                <div className="pasengersDetails" id='pasengersDetails1'>
-                  <div className="removeButton">
-                    <h4>Cabin class</h4> <button className='btn btn-danger' onClick={removeDetails}>X</button>
-                  </div>
-                  <p className='p1'>We can only show Economy prices fot this search </p>
-                  <p>To see Business and First Class options, please tell us your travel dates or destination.</p>
-
-                  <div className="innerDetails">
-                    <div className="pasangers1">
-                      <strong>Adult</strong>
-                      <p>Aged 16+</p>
-                    </div>
-                    <div className="pasangers1">
-                      <button onClick={() => count !== 0 ? setcount(count - 1) : ""}>-</button> <strong>{count}</strong> <button onClick={() => count < 6 ? setcount(count + 1) : ""}>+</button>
-                    </div>
-                  </div>
-
-                  <div className="innerDetails">
-                    <div className="pasangers1">
-                      <strong>Childern</strong>
-                      <p>Aged 0 to 15</p>
-                    </div>
-
-                    <div className="pasangers1">
-                      <button onClick={() => count1 !== 0 ? setcount1(count1 - 1) : ""}>-</button> <strong>{count1}</strong> <button onClick={() => count1 < 4 ? setcount1(count1 + 1) : ""}>+</button>
-                    </div>
-                  </div>
-                  <button onClick={removeDetails} className='btn btn-primary done'>Done</button>
-
+                <div className="input1">
+                  <label for="to" >To </label><br />
+                  <input type="text" required id="to" placeholder="Country,city or airtport" />
                 </div>
               </div>
 
 
+              <div className="mainInput" data-aos="fade-left">
+                <div className="input1 details2">
+                  <label for="depart" required >Departure </label><br />
+                  <input type="date" id="depart" />
+                </div>
+
+
+                <div id='pasengerdata'>
+                  <div className="input1 updatedata1" onClick={hadelFillData}>
+                    <label for="pasenger" >Travellers and cabin class </label><br />
+                    <div>{count} Adult, {count1} Children <i class="fa-solid fa-caret-down"></i></div>
+                  </div>
+
+                  <div className="pasengersDetails" id='pasengersDetails1'>
+                    <div className="removeButton">
+                      <h4>Cabin class</h4> <button className='btn btn-danger' onClick={removeDetails}>X</button>
+                    </div>
+                    <p className='p1'>We can only show Economy prices fot this search </p>
+                    <p>To see Business and First Class options, please tell us your travel dates or destination.</p>
+
+                    <div className="innerDetails">
+                      <div className="pasangers1">
+                        <strong>Adult</strong>
+                        <p>Aged 16+</p>
+                      </div>
+                      <div className="pasangers1">
+                        <button onClick={() => count !== 0 ? setcount(count - 1) : ""}>-</button> <strong>{count}</strong> <button onClick={() => count < 6 ? setcount(count + 1) : ""}>+</button>
+                      </div>
+                    </div>
+
+                    <div className="innerDetails">
+                      <div className="pasangers1">
+                        <strong>Childern</strong>
+                        <p>Aged 0 to 15</p>
+                      </div>
+
+                      <div className="pasangers1">
+                        <button onClick={() => count1 !== 0 ? setcount1(count1 - 1) : ""}>-</button> <strong>{count1}</strong> <button onClick={() => count1 < 4 ? setcount1(count1 + 1) : ""}>+</button>
+                      </div>
+                    </div>
+                    <button onClick={removeDetails} className='btn btn-primary done'>Done</button>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+              <div className="input2">
+                <button onClick={FormSubmit} className='btn btn-primary'>Search</button>
+              </div>
+
             </div>
 
+          </form>
 
-
-
-            <div className="input2">
-              <button className='btn btn-primary'>Search</button>
-            </div>
-
-          </div>
           <div className="SelectInp mt-2 pb-5">
             <div className="input2">
               <input id='select' type="checkbox" /> <label htmlFor='select'> Direct flights</label>

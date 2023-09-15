@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from './Footer'
 import Aos from 'aos';
 import "aos/dist/aos.css";
@@ -9,10 +9,21 @@ const Flight = () => {
     const [inputBoxes, setInputBoxes] = useState([]);
     const [count, setcount] = useState(0);
     const [count1, setcount1] = useState(0);
-
+    const navigate = useNavigate();
+   
     useEffect(() => {
         Aos.init({ duration: 2000 })
     }, [])
+
+
+    function FormSubmit() {
+        let From = document.getElementById('from').value;
+        let To = document.getElementById('to').value;
+        if (From !== "" && To !== "") {
+           alert("Welcome To My Website");
+            navigate("/Hotel");
+        }
+    }
 
     const handleRadioChange = (e) => {
         setSelectedRadio(e.target.id);
@@ -58,7 +69,7 @@ const Flight = () => {
         e.stopPropagation();
         document.getElementById("showSmallNav").style.display = "none"
     }
-        
+
 
     function validateform() {
         let email = document.getElementById("emailInput").value;
@@ -114,179 +125,184 @@ const Flight = () => {
 
                         <div className="FlightInput">
                             <div className="search3" data-aos="zoom-in-up">
-                                <div className="flightbox">
-                                    <div className="RedioButton">
 
-                                        <div className="innerRedio">
-                                            <input type="radio" name="redio" id="return" checked={selectedRadio === "return"} onChange={handleRadioChange} />
-                                            <label htmlFor="return">Return</label>
-                                        </div>
-                                        <div className="innerRedio">
-                                            <input type="radio" name="redio" id="OneWay" checked={selectedRadio === "OneWay"} onChange={handleRadioChange} />
-                                            <label htmlFor="OneWay">One Way</label>
-                                        </div>
-                                        <div className="innerRedio">
-                                            <input type="radio" name="redio" id="Multi" checked={selectedRadio === "Multi"} onChange={handleRadioChange} />
-                                            <label htmlFor="Multi">Multi-City</label>
-                                        </div>
-                                    </div>
+                                <form action="">
 
-                                    <div className='search2' style={{ display: selectedRadio === 'return' ? 'block' : 'none' }}>
+                                    <div className="flightbox">
+                                        <div className="RedioButton">
 
-                                        <div className="search">
-
-                                            <div className="mainInput" >
-
-                                                <div className="input1">
-                                                    <label for="from" >From </label><br />
-                                                    <input type="text" id="from" placeholder="Country,city or airtport" />
-                                                </div>
-                                                <div className="input1">
-                                                    <label for="to" >To </label><br />
-                                                    <input type="text" id="to" placeholder="Country,city or airtport" />
-                                                </div>
+                                            <div className="innerRedio">
+                                                <input type="radio" name="redio" id="return" checked={selectedRadio === "return"} onChange={handleRadioChange} />
+                                                <label htmlFor="return">Return</label>
                                             </div>
+                                            <div className="innerRedio">
+                                                <input type="radio" name="redio" id="OneWay" checked={selectedRadio === "OneWay"} onChange={handleRadioChange} />
+                                                <label htmlFor="OneWay">One Way</label>
+                                            </div>
+                                            <div className="innerRedio">
+                                                <input type="radio" name="redio" id="Multi" checked={selectedRadio === "Multi"} onChange={handleRadioChange} />
+                                                <label htmlFor="Multi">Multi-City</label>
+                                            </div>
+                                        </div>
 
-                                            <div className="mainInput">
+                                        <div className='search2' style={{ display: selectedRadio === 'return' ? 'block' : 'none' }}>
 
-                                                <div id='pasengerdata'>
-                                                    <div className="input1" onClick={hadelFillData}>
-                                                        <label for="pasenger" >Travellers and cabin class </label><br />
-                                                        <div>{count} Adult, {count1} Children  <i class="fa-solid fa-caret-down"></i></div>
+                                            <div className="search">
+
+                                                <div className="mainInput" >
+
+                                                    <div className="input1">
+                                                        <label for="from" >From </label><br />
+                                                        <input type="text" required id="from" placeholder="Country,city or airtport" />
                                                     </div>
-
-                                                    <div className="pasengersDetails" id='pasengersDetails1'>
-                                                        <div className="removeButton">
-                                                            <h4>Cabin class</h4> <button className='btn btn-danger' onClick={removeDetails}>X</button>
-                                                        </div>
-                                                        <p className='p1'>We can only show Economy prices fot this search </p>
-                                                        <p>To see Business and First Class options, please tell us your travel dates or destination.</p>
-
-                                                        <div className="innerDetails">
-                                                            <div className="pasangers1">
-                                                                <strong>Adult</strong>
-                                                                <p>Aged 16+</p>
-                                                            </div>
-                                                            <div className="pasangers1">
-                                                                <button onClick={() => count !== 0 ? setcount(count - 1) : ""}>-</button> <strong>{count}</strong> <button onClick={() => count < 6 ? setcount(count + 1) : ""}>+</button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="innerDetails">
-                                                            <div className="pasangers1">
-                                                                <strong>Childern</strong>
-                                                                <p>Aged 0 to 15</p>
-                                                            </div>
-                                                            <div className="pasangers1">
-                                                                <button onClick={() => count1 !== 0 ? setcount1(count1 - 1) : ""}>-</button> <strong>{count1}</strong> <button onClick={() => count1 < 4 ? setcount1(count1 + 1) : ""}>+</button>
-                                                            </div>
-                                                        </div>
-                                                        <button onClick={removeDetails} className='btn btn-primary done'>Done</button>
-
+                                                    <div className="input1">
+                                                        <label for="to" >To </label><br />
+                                                        <input type="text" required id="to" placeholder="Country,city or airtport" />
                                                     </div>
                                                 </div>
 
-                                            </div>
-                                        </div>
-                                        <div className="Checkbox">
-                                            <div className="InnerCheckbox">
-                                                <input type="checkbox" id='checkbox1' />
-                                                <label htmlFor="checkbox1">Add Nearby Airports</label>
-                                            </div>
-                                            <div className="InnerCheckbox">
-                                                <input type="checkbox" id='checkbox2' />
-                                                <label htmlFor="checkbox2">Direct Flights Only</label>
-                                            </div>
+                                                <div className="mainInput">
 
-
-                                        </div>
-                                        <div className="input3">
-                                            <button className='btn btn-primary'>Search</button>
-                                        </div>
-
-                                    </div>
-
-                                    <div style={{ display: selectedRadio === 'OneWay' ? 'block' : 'none' }} className="search4">
-
-                                        <div className="OneWayInput">
-                                            <div className="InnerOneWay">
-                                                <input type="text" placeholder='From' />
-                                                <input type="text" placeholder='To' />
-                                                <input type="date" placeholder='From' />
-                                            </div>
-                                            <div className="InnerOneWay">
-                                                <input type="text" placeholder='From' />
-                                                <input type="text" placeholder='To' />
-                                                <input type="date" placeholder='From' />
-                                            </div>
-                                            <button className='btn btn-primary'>Search</button>
-                                        </div>
-
-                                    </div>
-
-                                    <div style={{ display: selectedRadio === 'Multi' ? 'block' : 'none' }} className="search5">
-
-
-                                        <div className="lastInput mt-2">
-                                            <div className="mb-4" id="InputData">
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    placeholder='From Country,city or airtport'
-                                                />
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    placeholder="To Country,city or airtport"
-                                                />
-
-
-                                                <div className="inputBox1 mt-4">
-                                                    {inputBoxes.map((box) => (
-                                                        <div key={box.id}>
-
-                                                            <input
-                                                                type="text"
-                                                                className="form-control"
-                                                                id={`name${box.id}`}
-                                                                placeholder="From Country,city or airtport"
-                                                            />
-
-                                                            <input
-                                                                type="text"
-                                                                className="form-control"
-                                                                id={`name${box.id}`}
-                                                                placeholder="To Country,city or airtport" />
-
-                                                            <button
-                                                                onClick={() => handleDeleteBox(box.id)}
-                                                                className="btn btn-danger mb-2"
-                                                                style={{ float: 'right', marginTop: '-47.5px', }}
-                                                            >
-                                                                Remove
-                                                            </button>
-                                                            <div className='gapInput'></div>
+                                                    <div id='pasengerdata'>
+                                                        <div className="input1" onClick={hadelFillData}>
+                                                            <label for="pasenger" >Travellers and cabin class </label><br />
+                                                            <div>{count} Adult, {count1} Children  <i class="fa-solid fa-caret-down"></i></div>
                                                         </div>
 
-                                                    ))}
+                                                        <div className="pasengersDetails" id='pasengersDetails1'>
+                                                            <div className="removeButton">
+                                                                <h4>Cabin class</h4> <button className='btn btn-danger' onClick={removeDetails}>X</button>
+                                                            </div>
+                                                            <p className='p1'>We can only show Economy prices fot this search </p>
+                                                            <p>To see Business and First Class options, please tell us your travel dates or destination.</p>
+
+                                                            <div className="innerDetails">
+                                                                <div className="pasangers1">
+                                                                    <strong>Adult</strong>
+                                                                    <p>Aged 16+</p>
+                                                                </div>
+                                                                <div className="pasangers1">
+                                                                    <button onClick={() => count !== 0 ? setcount(count - 1) : ""}>-</button> <strong>{count}</strong> <button onClick={() => count < 6 ? setcount(count + 1) : ""}>+</button>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className="innerDetails">
+                                                                <div className="pasangers1">
+                                                                    <strong>Childern</strong>
+                                                                    <p>Aged 0 to 15</p>
+                                                                </div>
+                                                                <div className="pasangers1">
+                                                                    <button onClick={() => count1 !== 0 ? setcount1(count1 - 1) : ""}>-</button> <strong>{count1}</strong> <button onClick={() => count1 < 4 ? setcount1(count1 + 1) : ""}>+</button>
+                                                                </div>
+                                                            </div>
+                                                            <button onClick={removeDetails} className='btn btn-primary done'>Done</button>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div className="Checkbox">
+                                                <div className="InnerCheckbox">
+                                                    <input type="checkbox" id='checkbox1' />
+                                                    <label htmlFor="checkbox1">Add Nearby Airports</label>
+                                                </div>
+                                                <div className="InnerCheckbox">
+                                                    <input type="checkbox" id='checkbox2' />
+                                                    <label htmlFor="checkbox2">Direct Flights Only</label>
                                                 </div>
 
 
                                             </div>
-                                            <div className="multiButton">
-                                                <button className="btn btn-success" id="btn" onClick={handleAddBox}>
-                                                    <i class="fa-solid fa-plus"></i>  Add Another Flights
-                                                </button>
-                                                <button id='Multibtn' className="btn btn-primary" data-aos="fade-up" >
-                                                    Search
-                                                </button>
+                                            <div className="input3">
+                                                <button onClick={FormSubmit} className='btn btn-primary'>Search</button>
                                             </div>
 
                                         </div>
 
+                                        <div style={{ display: selectedRadio === 'OneWay' ? 'block' : 'none' }} className="search4">
 
+                                            <div className="OneWayInput">
+                                                <div className="InnerOneWay">
+                                                    <input type="text" placeholder='From' />
+                                                    <input type="text" placeholder='To' />
+                                                    <input type="date" placeholder='From' />
+                                                </div>
+                                                <div className="InnerOneWay">
+                                                    <input type="text" placeholder='From' />
+                                                    <input type="text" placeholder='To' />
+                                                    <input type="date" placeholder='From' />
+                                                </div>
+                                                <button className='btn btn-primary'>Search</button>
+                                            </div>
+
+                                        </div>
+
+                                        <div style={{ display: selectedRadio === 'Multi' ? 'block' : 'none' }} className="search5">
+
+
+                                            <div className="lastInput mt-2">
+                                                <div className="mb-4" id="InputData">
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder='From Country,city or airtport'
+                                                    />
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        placeholder="To Country,city or airtport"
+                                                    />
+
+
+                                                    <div className="inputBox1 mt-4">
+                                                        {inputBoxes.map((box) => (
+                                                            <div key={box.id}>
+
+                                                                <input
+                                                                    type="text"
+                                                                    className="form-control"
+                                                                    id={`name${box.id}`}
+                                                                    placeholder="From Country,city or airtport"
+                                                                />
+
+                                                                <input
+                                                                    type="text"
+                                                                    className="form-control"
+                                                                    id={`name${box.id}`}
+                                                                    placeholder="To Country,city or airtport" />
+
+                                                                <button
+                                                                    onClick={() => handleDeleteBox(box.id)}
+                                                                    className="btn btn-danger mb-2"
+                                                                    style={{ float: 'right', marginTop: '-47.5px', }}
+                                                                >
+                                                                    Remove
+                                                                </button>
+                                                                <div className='gapInput'></div>
+                                                            </div>
+
+                                                        ))}
+                                                    </div>
+
+
+                                                </div>
+                                                <div className="multiButton">
+                                                    <button className="btn btn-success" id="btn" onClick={handleAddBox}>
+                                                        <i class="fa-solid fa-plus"></i>  Add Another Flights
+                                                    </button>
+                                                    <button id='Multibtn' className="btn btn-primary" data-aos="fade-up" >
+                                                        Search
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
                                     </div>
-                                </div>
+
+                                </form>
                             </div>
                         </div>
 

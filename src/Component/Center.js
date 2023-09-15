@@ -10,7 +10,8 @@ const Center = () => {
     }, [])
 
     return (
-        <div className='CenterPage'>
+        <div >
+            <div className="CenterPage">
             <div className="container mt-5 mb-1">
                 <div className="row box">
 
@@ -252,6 +253,7 @@ const Center = () => {
 
             <div data-aos="fade-up">
                 <Footer />
+            </div>
             </div>
 
         </div>
