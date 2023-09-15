@@ -1,0 +1,618 @@
+@media only screen and (max-width:1199px) {
+    .FlightInput {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .search3 {
+        width: 100%;
+        background-color: #083668;
+        padding: 5px;
+        margin-left: -70px;
+    }
+
+    .flightbox {
+        margin: 10px auto;
+        padding-left: 1px;
+    }
+
+
+}
+
+@media only screen and (max-width:1000px) {
+    .search {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login2 {
+        display: none;
+    }
+
+    .smallcart {
+        display: block;
+    }
+
+    .cont-1 h1 {
+        font-size: 30px;
+        margin-left: 5px;
+    }
+
+    .mainInput {
+        background-color: white;
+        display: flex;
+        width: 95%;
+        border-radius: 10px;
+        margin: 5px;
+        justify-content: space-around;
+    }
+
+    .input2 {
+        display: flex;
+        padding: 5px 15px;
+        margin-left: -10px;
+    }
+
+    .SelectInp {
+        display: flex;
+        align-items: center;
+        margin: 10px 0px 10px 0px;
+    }
+
+    .input2 .btn {
+        width: 99%;
+        font-size: 21px;
+    }
+
+    .image img {
+        height: auto;
+        width: 100vw;
+    }
+
+    .box11 h1 {
+        font-size: 2.8rem;
+        color: white;
+        font-weight: bold;
+    }
+
+    .input3 {
+        margin: 5px;
+    }
+
+    .search2 {
+        display: flex;
+        padding: 20px;
+    }
+
+    .search3 {
+        width: 90%;
+        background-color: #083668;
+        padding: 5px;
+    }
+
+    .RedioButton {
+        display: flex;
+        margin: 15px 0 -5px 23px;
+    }
+
+    .input3 button {
+        padding: 13px 20px;
+        width: 96.5%;
+        font-size: 18px;
+    }
+
+    .InnerOneWay input {
+        height: 40px;
+        margin: 5px 1px;
+        padding: 10px;
+        width: 48%;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    .hotelbox1 {
+        position: absolute;
+        top: 130px;
+        padding: 15px 0 10px 10px;
+        width: 610px;
+        background-color: #05203c;
+    }
+
+    .inputForm {
+        color: white;
+        display: block;
+        /* padding: 10px 5px; */
+    }
+
+    .InnerInputForm1 input {
+        width: 100%;
+    }
+
+    .InnerInputForm2 {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+    }
+
+    .filterTicket {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pasengerDetails2 {
+        background-color: white;
+        color: black;
+        display: none;
+        border-radius: 10px;
+        position: absolute;
+        right: 17px;
+        top: 85px;
+        width: 270px;
+    }
+
+    .innerFilter .btn {
+        margin-right: -10px;
+    }
+
+    .InnerCar {
+        width: 100%;
+        height: 140px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+}
+
+/* ////////////////////////////////////////////////////// */
+
+/* media Query 650px start  */
+
+
+@media only screen and (max-width:650px) {
+    .mainInput {
+        background-color: white;
+        display: block;
+        width: 95%;
+        border-radius: 10px;
+        justify-content: space-around;
+    }
+
+    .input2 .btn {
+        width: 99%;
+        font-size: 19px;
+    }
+
+    .cont-1 h1 {
+        font-size: 27px;
+        margin-left: 5px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    .image img {
+        height: auto;
+        width: 100vw;
+    }
+
+
+    .urlPage {
+        border: 1px solid black;
+        width: 320px;
+        padding: 20px 15px;
+        border-radius: 10px;
+        line-height: 40px;
+        background-color: white;
+        color: black;
+        position: absolute;
+        top: 80px;
+        display: none;
+        right: 32px;
+    }
+
+    .loginPage {
+        background-color: white;
+        color: black;
+        width: 350px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 35px;
+        border: 1px solid black;
+    }
+
+    .Nav {
+        display: none;
+        top: 80px;
+        right: 28px;
+        position: absolute;
+        width: 260px;
+        background-color: white;
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    .box11 h1 {
+        font-size: 2.5rem;
+        color: white;
+        padding: 5px 20px;
+        font-weight: bold;
+        margin: 2px;
+    }
+
+    .RedioButton {
+        display: flex;
+        margin: -10px 0 -10px 20px;
+    }
+
+    .input3 button {
+        padding: 10px 20px;
+        width: 96.5%;
+        font-size: 18px;
+    }
+
+    .FlightInput {
+        display: flex;
+        justify-content: center;
+    }
+
+    .search3 {
+        width: 80%;
+        margin-left: 7px;
+        background-color: #083668;
+        padding: 5px;
+    }
+
+    .box11 h1 {
+        font-size: 2rem;
+        color: white;
+        margin: 10px 20px;
+        font-weight: bold;
+        padding: 20px 40px;
+    }
+
+
+
+    .InnerOneWay {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .InnerOneWay input {
+        height: 40px;
+        width: 100%;
+        margin: 5px 1px;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+
+    .lastBox p {
+        margin-bottom: 20px;
+    }
+
+    .innerBox2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .innerImagefirst {
+        margin-bottom: -30px;
+    }
+
+    .flightP {
+        width: 100%;
+        height: 750px;
+    }
+
+    .pasengersDetails {
+        background-color: white;
+        color: black;
+        width: 320px;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: 80px;
+        border: 1px solid black;
+        right: 0px;
+        display: none;
+    }
+
+    .hotelbox1 {
+        position: absolute;
+        top: 30px;
+        padding: 5px;
+        width: 380px;
+        background-color: #05203c;
+    }
+
+    .hotelbox1 h1 {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .inputForm {
+        color: white;
+        display: block;
+    }
+
+    .InnerInputForm1 input {
+        width: 100%;
+    }
+
+    .InnerInputForm2 {
+        display: block;
+        justify-content: space-between;
+
+        & input {
+            width: 113%;
+
+        }
+    }
+
+    .filterTicket {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pasengerDetails2 {
+        background-color: white;
+        color: black;
+        display: none;
+        border-radius: 10px;
+        position: absolute;
+        right: 0px;
+        top: -145px;
+        width: 250px;
+    }
+
+    .innerDetail2 {
+        & button {
+            padding: 5px 6px;
+            margin: 0 6px;
+            font-size: 16px;
+            border-radius: 6px;
+            background-color: rgb(215, 215, 215);
+        }
+
+        & span {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+
+    .innerDetail1 {
+        & i {
+            margin: 0 5px;
+            font-size: 18px;
+        }
+
+        font-size: 16px;
+    }
+
+    .innerFilter {
+        display: flex;
+    }
+
+    .innerFilter .btn {
+        margin-right: -10px;
+    }
+
+    .InnerCar {
+        width: 100%;
+        height: 180px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    #addperson {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        padding: 8px 2px;
+        width: 113%;
+    }
+
+    .hotelInnerbox2 {
+        position: absolute;
+        top: 0;
+        margin: 20px auto;
+        color: white;
+        font-weight: bold;
+    }
+
+    .hotelInnerbox2 h2 {
+        font-size: 1.9rem;
+    }
+    .HideNav{
+        display: none;
+    }
+
+}
+
+/* end 650 pixel  */
+
+@media only screen and (max-width:395px) {
+    .input2 .btn {
+        width: 100%;
+        margin-left: 4px;
+        font-size: 19px;
+    }
+
+    .urlPage {
+        border: 1px solid black;
+        width: 300px;
+        padding: 10px 5px;
+        border-radius: 10px;
+        line-height: 40px;
+        background-color: white;
+        color: black;
+        position: absolute;
+        top: 100px;
+        display: none;
+        right: 32px;
+    }
+
+    .loginPage {
+        background-color: white;
+        color: black;
+        width: 300px;
+        padding: 5px 20px;
+        border-radius: 10px;
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 30px;
+        border: 1px solid black;
+    }
+
+    .Nav {
+        display: none;
+        top: 100px;
+        right: 23px;
+        position: absolute;
+        width: 260px;
+        background-color: white;
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    .box8 {
+        line-height: 5px;
+    }
+
+    .SelectInp {
+        margin-top: -10px;
+    }
+
+    .box7 button {
+        padding: 3px 5px;
+    }
+
+    .image img {
+        height: auto;
+        width: 100vw;
+    }
+
+    .innerBox a {
+        text-decoration: none;
+        margin-right: 2px;
+
+    }
+
+    .box11 h1 {
+        font-size: 1.8rem;
+        color: white;
+        font-weight: bold;
+        margin: 0;
+        padding: 5px 25px;
+    }
+
+    .lastBox p {
+        margin-bottom: 5px;
+    }
+
+    .innerBox2 {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .pasengersDetails {
+        background-color: white;
+        color: black;
+        width: 280px;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: 80px;
+        border: 1px solid black;
+        right: 0px;
+        display: none;
+    }
+
+    .hotelbox1 {
+        position: absolute;
+        top: 30px;
+        padding: 5px;
+        width: 300px;
+        background-color: #05203c;
+    }
+
+    .hotelbox1 h1 {
+        font-size: 1.5rem;
+    }
+    .inputForm{
+        margin-top: -15px;
+    }
+
+    .smallNav {
+        position: absolute;
+        top: 110px;
+        right: 20px;
+        z-index: 2;
+        width: 270px;
+        display: none;
+    }
+
+    .InnerInputForm1 {
+        width: 97%;
+    }
+
+    .hotelInnerbox2 {
+        position: absolute;
+        top: 0;
+        margin: 20px auto;
+        color: white;
+        font-weight: bold;
+    }
+
+    .hotelInnerbox2 h2 {
+        font-size: 1.8rem;
+    }
+
+    .search3 {
+        width: 90%;
+        background-color: #083668;
+        padding: 5px;
+    }
+
+    .flightbox {
+        margin: 5px auto;
+    }
+
+    .box11 {
+        margin: 5px 0px 0 -15px;
+        & h1{
+            font-size: 1.5rem;
+        }
+    }
+    .filterTicket{
+        margin-top: -30px;
+    }
+    .innerFilter{
+        margin-left: -15px;
+    }
+    .hotelbox1{
+        margin-top: -17px;
+    }
+    .HideNav{
+        display: none;
+    }
+
+}
